@@ -1,0 +1,30 @@
+
+# .NET
+**/bin/
+**/obj/
+**/Debug/
+**/Release/
+
+# Database
+**/*.db
+**/*.db-shm
+**/*.db-wal
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+secrets.json
+
+# IDE
+.vs/
+.vscode/
+.idea/
+
+# Node
+node_modules/
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
