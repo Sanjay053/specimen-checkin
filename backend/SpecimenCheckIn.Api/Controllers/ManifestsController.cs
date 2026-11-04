@@ -140,8 +140,9 @@ public class ManifestsController : ControllerBase
         {
             return Ok(new
             {
-                message = "Specimen already received.",
-                specimen
+                message = "Specimen received successfully.",
+                specimenId = specimen.Id,
+                status = specimen.Status
             });
         }
 
@@ -157,11 +158,14 @@ public class ManifestsController : ControllerBase
 
         await _context.SaveChangesAsync();
 
+        // Return a DTO-style response, not the EF Core entity.
         return Ok(new
         {
             message = "Specimen received successfully.",
-            specimen
+            specimenId = specimen.Id,
+            status = specimen.Status
         });
+
     }
 
     // POST: api/manifests/{id}/specimens/{sid}/flag
@@ -213,8 +217,10 @@ public class ManifestsController : ControllerBase
         return Ok(new
         {
             message = "Specimen flagged and discrepancy created.",
-            specimen,
-            discrepancy
+            specimenId = specimen.Id,
+            specimenStatus = specimen.Status,
+            discrepancyId = discrepancy.Id,
+            discrepancyStatus = discrepancy.Status
         });
     }
 

@@ -1,29 +1,25 @@
-
 # .NET
 **/bin/
 **/obj/
-**/Debug/
-**/Release/
+.vs/
 
-# Database
+# SQLite
 **/*.db
 **/*.db-shm
 **/*.db-wal
 
-# Environment and secrets
+# Node
+**/node_modules/
+**/dist/
+
+# Environment
 .env
 .env.*
 !.env.example
-secrets.json
 
 # IDE
-.vs/
 .vscode/
 .idea/
-
-# Node
-node_modules/
-dist/
 
 # OS
 .DS_Store
